@@ -5,7 +5,9 @@ class CategoriesContent extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    Categories Content
+    <div class="section container">
+      Categories Content
+    </div>
     `;
   }
 }

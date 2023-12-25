@@ -11,7 +11,7 @@
     },
     "rules": {
         "linebreak-style": 0,
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "projectDependencies": false}],
         "no-underscore-dangle": "off"
     }
 }

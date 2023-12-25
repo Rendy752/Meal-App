@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
@@ -22,13 +21,6 @@ module.exports = {
             loader: 'css-loader',
           },
         ],
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file-loader',
-        options: {
-          name: 'src/images/[name].[ext]',
-        },
       },
     ],
   },
