@@ -1,4 +1,5 @@
 import './meal-item';
+import './circular-loading';
 
 class MealList extends HTMLElement {
   set meals(meals) {
@@ -13,6 +14,14 @@ class MealList extends HTMLElement {
       mealItemElement.meal = meal;
       this.querySelector("#meal-list-container").appendChild(mealItemElement);
     });
+  }
+
+  renderLoading() {
+    this.innerHTML = `
+    <div class="center-align">
+      <circular-loading></circular-loading>
+    </div>
+    `;
   }
 
   renderError(message) {

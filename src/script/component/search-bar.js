@@ -1,11 +1,11 @@
 class searchBar extends HTMLElement {
   connectedCallback() {
+    this.className="row center-align";
     this.render();
   }
 
   set clickEvent(event) {
     this._clickEvent = event;
-    this.className="row center-align";
     this.render();
   }
 
