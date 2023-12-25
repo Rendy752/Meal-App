@@ -1,4 +1,3 @@
-import 'materialize-css/dist/js/materialize.min';
 import logo from '../../images/logo.png';
 
 class NavBar extends HTMLElement {
@@ -10,8 +9,8 @@ class NavBar extends HTMLElement {
     this.innerHTML = `
   <nav class="orange darken-3">
     <div class="container nav-wrapper">
-      <a href="#!" class="brand-logo"><img src=${logo} alt="logo" width="64px"></a>
-      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a class="brand-logo"><img src=${logo} alt="logo" width="64px"></a>
+      <a data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li id="meals" class="hoverable waves-effect waves-yellow"><a>Meals</a></li>
         <li id="categories" class="hoverable waves-effect waves-yellow"><a>Categories</a></li>
@@ -31,18 +30,14 @@ class NavBar extends HTMLElement {
         const options = {
             'edge': 'left'
         };
-        var instances = M.Sidenav.init(elems, options);
-    
-        // Enable this to make the side-nav open automatically when page is loaded.
+        var instances = M.Sidenav.init(elems, options);    
         instances[0].open();
-    });
+      });
       
     const meals = this.querySelectorAll('#meals');
     const categories = this.querySelectorAll('#categories');
     const ingredients = this.querySelectorAll('#ingredients');
     const mainElement = document.querySelector('main');
-    const [meal1,meal2]=meals;
-    console.log(meal1,meal2);
     [[meals, 'meals-content'], [categories, 'categories-content'], [ingredients, 'ingredients-content']].forEach((navbarContent) => {
       navbarContent[0].forEach((item)=>{
         item.addEventListener('click', () => {

@@ -9,8 +9,8 @@ class MealsContent extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="section container">
-      <search-bar>
-      <meal-list>
+      <search-bar></search-bar>
+      <meal-list></meal-list>
     </div>
     `;
   }

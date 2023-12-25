@@ -1,14 +1,14 @@
-const baseUrl = 'www.themealdb.com/api/json/v1/1';
+const baseUrl = 'https://www.themealdb.com/api/json/v1/1';
 class MealData {
   static searchMeal = async (keyword) => {
     try {
       const response = await fetch(`${baseUrl}/search.php?s=${keyword}`);
       const responseJson = await response.json();
-      return responseJson.teams.length
-        ? responseJson.teams
-        : `${keyword} is not found`;
+      return responseJson.meals
+        ? Promise.resolve(responseJson.meals)
+        : Promise.reject(`Meal <span class="red-text">${keyword}</span> is not found`);
     } catch (e) {
-      return 'Problem occurred, such as your internet';
+      return Promise.reject('Problem occurred, such as your internet');
     }
   };
 }

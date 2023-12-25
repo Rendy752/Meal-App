@@ -2,33 +2,27 @@ import './meal-item';
 
 class MealList extends HTMLElement {
   set meals(meals) {
-    this.meals = meals;
+    this._meals = meals;
     this.render();
   }
 
   render() {
-    this.innerHTML = '';
-    this.meals.forEach((meal) => {
+    this.innerHTML = '<div id="meal-list-container" class="row"></div>';
+    this._meals.forEach((meal) => {
       const mealItemElement = document.createElement('meal-item');
       mealItemElement.meal = meal;
-      this.appendChild(mealItemElement);
+      this.querySelector("#meal-list-container").appendChild(mealItemElement);
     });
   }
 
   renderError(message) {
     this.innerHTML = '';
     this.innerHTML += `
-    <style>
-    .placeholder {
-        font-weight: lighter;
-        color: rgba(0, 0, 0, 0.5);
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-    </style>
-    <h2 class="placeholder">${message}</h2>`;
+    <div class="center-align flow-text">
+      <span class="btn-floating pulse red darken-3"><i class="material-icons black-text">notifications_active</i></span>
+      <span>${message}</span>
+    </div>
+    `;
   }
 }
 

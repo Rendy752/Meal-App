@@ -1,51 +1,27 @@
 class MealItem extends HTMLElement {
   set meal(meal) {
-    this.meal = meal;
+    this._meal = meal;
+    this.className="col l3 m4 s6";
     this.render();
   }
 
   render() {
     this.innerHTML = `
-      <style>
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-          }
-          :host {
-            display: block;
-            margin-bottom: 18px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-          }
-          .fan-art-meal {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            object-position: center;
-          }
-          .meal-info {
-            padding: 24px;
-          }
-          .meal-info > h2 {
-            font-weight: lighter;
-          }
-          
-          .meal-info > p {
-            margin-top: 10px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 10; /* number of lines to show */
-          }
-        </style>
-      <img class="fan-art-meal" src="${this.meal.strTeamBadge}" alt="Fan Art">
-    <div class="meal-info">
-      <h2>${this.meal.strTeam}</h2>
-      <p>${this.meal.strDescriptionEN}</p>
-    </div>`;
+    <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="${this._meal.strMealThumb}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">${this._meal.strMeal}<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Instruction<i class="material-icons right">close</i></span>
+      <p>${this._meal.strInstructions}</p>
+    </div>
+  </div>
+            
+    `;
   }
 }
 

@@ -4,31 +4,25 @@ class searchBar extends HTMLElement {
   }
 
   set clickEvent(event) {
-    this.clickEvent = event;
+    this._clickEvent = event;
+    this.className="row center-align";
     this.render();
   }
 
-  get value() {
-    return this.querySelector('#searchElement').value;
+  get keyword() {
+    return this.querySelector('#meals-keyword').value;
   }
 
   render() {
     this.innerHTML = `
-    <div class="row center-align">
-      <div class="row">
         <div class="input-field col s10 m8 offset-m1">
           <i class="material-icons prefix">mode_edit</i>
-          <textarea id="meals-keyword" class="materialize-textarea" id="searchElement"></textarea>
+          <textarea id="meals-keyword" class="materialize-textarea"></textarea>
           <label for="meals-keyword">Search Meals</label>
         </div>
         <a id="searchButton" class="btn-floating btn-large waves-effect waves-light blue hoverable col"><i class="material-icons">search</i></a>
-      </div>
-  </div>
       `;
-    this.querySelector('#searchButton').addEventListener(
-      'click',
-      this.clickEvent,
-    );
+      this.querySelector('#searchButton').addEventListener('click',this._clickEvent);
   }
 }
 

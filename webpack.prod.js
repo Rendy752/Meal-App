@@ -18,13 +18,6 @@ module.exports = merge(common, {
           },
         ],
       },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file-loader',
-        options: {
-          name: 'src/images/[name].[ext]',
-        },
-      },
     ],
   },
 });
