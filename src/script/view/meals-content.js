@@ -1,5 +1,6 @@
 import '../component/meal-list';
 import '../component/search-bar';
+import '../component/meal-detail-modal';
 
 class MealsContent extends HTMLElement {
   connectedCallback() {
@@ -9,8 +10,9 @@ class MealsContent extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="section container">
-      <search-bar></search-bar>
-      <meal-list></meal-list>
+    <search-bar></search-bar>
+    <meal-list></meal-list>
+    <meal-detail-modal></meal-detail-modal>
     </div>
     `;
   }

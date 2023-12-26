@@ -24,7 +24,7 @@ class searchBar extends HTMLElement {
       `;
     this.querySelector('#searchButton').addEventListener(
       'click',
-      this._clickEvent,
+      this._clickEvent
     );
   }
 }

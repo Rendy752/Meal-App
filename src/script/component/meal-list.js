@@ -15,6 +15,11 @@ class MealList extends HTMLElement {
       const mealItemElement = document.createElement('meal-item');
       mealItemElement.meal = meal;
       this.querySelector('#meal-list-container').appendChild(mealItemElement);
+      // console.log(meal);
+      // this.querySelector('#showDetail').addEventListener(
+      //   'click',
+      //   mealItemElement.onButtonMealDetailClicked(meal.idMeal)
+      // );
     });
   }
 
