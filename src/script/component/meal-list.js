@@ -8,11 +8,13 @@ class MealList extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = '<div id="meal-list-container" class="row"></div>';
+    this.innerHTML = `
+    <div id="meal-list-container" class="row"></div>
+    `;
     this._meals.forEach((meal) => {
       const mealItemElement = document.createElement('meal-item');
       mealItemElement.meal = meal;
-      this.querySelector("#meal-list-container").appendChild(mealItemElement);
+      this.querySelector('#meal-list-container').appendChild(mealItemElement);
     });
   }
 

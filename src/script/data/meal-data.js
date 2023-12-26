@@ -6,7 +6,9 @@ class MealData {
       const responseJson = await response.json();
       return responseJson.meals
         ? Promise.resolve(responseJson.meals)
-        : Promise.reject(`Meal <span class="red-text">${keyword}</span> is not found`);
+        : Promise.reject(
+            `Meal <span class="red-text">${keyword}</span> is not found`,
+          );
     } catch (e) {
       return Promise.reject('Problem occurred, such as your internet');
     }

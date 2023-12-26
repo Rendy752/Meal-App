@@ -1,6 +1,6 @@
 class searchBar extends HTMLElement {
   connectedCallback() {
-    this.className="row center-align";
+    this.className = 'row center-align';
     this.render();
   }
 
@@ -22,7 +22,10 @@ class searchBar extends HTMLElement {
         </div>
         <a id="searchButton" class="btn-floating btn-large waves-effect waves-light blue hoverable col"><i class="material-icons">search</i></a>
       `;
-      this.querySelector('#searchButton').addEventListener('click',this._clickEvent);
+    this.querySelector('#searchButton').addEventListener(
+      'click',
+      this._clickEvent,
+    );
   }
 }
 

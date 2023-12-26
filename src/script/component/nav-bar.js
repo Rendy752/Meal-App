@@ -25,27 +25,6 @@ class NavBar extends HTMLElement {
     <li id="ingredients" class="hoverable waves-effect waves-yellow col s12"><a>Ingredients</a></li>
   </ul>
       `;
-      document.addEventListener('DOMContentLoaded', function() {
-        const elems = document.querySelectorAll('.sidenav');
-        const options = {
-            'edge': 'left'
-        };
-        M.Sidenav.init(elems, options);    
-      });
-      
-    // const meals = this.querySelectorAll('#meals');
-    // const categories = this.querySelectorAll('#categories');
-    // const ingredients = this.querySelectorAll('#ingredients');
-    // const mainElement = document.querySelector('main');
-    // [[meals, 'meals-content'], [categories, 'categories-content'], [ingredients, 'ingredients-content']].forEach((navbarContent) => {
-    //   navbarContent[0].forEach((item)=>{
-    //     item.addEventListener('click', () => {
-    //       mainElement.innerHTML = `<${navbarContent[1]}></${navbarContent[1]}>`;
-    //       [...meals, ...categories, ...ingredients].forEach((navbar) => { navbar.classList.remove('active'); });
-    //       item.classList.add('active');
-    //     });
-    //   })
-    // });
   }
 }
 customElements.define('nav-bar', NavBar);
