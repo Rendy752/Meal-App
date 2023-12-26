@@ -2,7 +2,7 @@ const baseUrl = 'https://www.themealdb.com/api/json/v1/1';
 class MealData {
   static searchMeal = async (keyword) => {
     try {
-      if (!keyword) return Promise.reject('Keyword tidak boleh kosong');
+      if (!keyword) return Promise.reject("Keyword can't be empty");
       const response = await fetch(`${baseUrl}/search.php?s=${keyword}`);
       const responseJson = await response.json();
       return responseJson.meals

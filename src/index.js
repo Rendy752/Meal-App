@@ -9,6 +9,7 @@ const meals = document.querySelectorAll('#meals');
 const categories = document.querySelectorAll('#categories');
 const ingredients = document.querySelectorAll('#ingredients');
 const mainElement = document.querySelector('main');
+mainElement.setAttribute('class', 'orange lighten-3');
 [
   [meals, 'meals-content'],
   [categories, 'categories-content'],
