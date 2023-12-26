@@ -16,6 +16,7 @@ const main = async (content = 'meals-content') => {
     const onButtonSearchKeywordClicked = async () => {
       try {
         mealListElement.renderLoading();
+        console.log(searchElement.keyword);
         const result = await MealData.searchMeal(searchElement.keyword);
         mealListElement.meals = result;
       } catch (e) {
@@ -35,26 +36,26 @@ const main = async (content = 'meals-content') => {
     };
 
     await showRandomMeal();
-    const mealDetailModalElement = document.querySelector('meal-detail-modal');
-    const mealItemElement = document.querySelectorAll('meal-item');
+    // const mealDetailModalElement = document.querySelector('meal-detail-modal');
+    // const mealItemElement = document.querySelector('meal-item');
 
-    const onButtonMealDetailClicked = async (id) => {
-      try {
-        mealDetailModalElement.renderLoading();
-        console.log(id);
-        const result = await MealData.getMealDetails(id);
-        mealDetailModalElement.detail = result;
-      } catch (e) {
-        mealDetailModalElement.renderError(e);
-      }
-    };
-    console.log(mealItemElement);
-    // mealItemElement.clickEvent = onButtonMealDetailClicked('5227');
+    // const onButtonMealDetailClicked = async () => {
+    //   try {
+    //     mealDetailModalElement.renderLoading();
+    //     console.log(mealItemElement.idMeal);
+    //     const result = await MealData.getMealDetails(mealItemElement.idMeal);
+    //     mealDetailModalElement.detail = result;
+    //   } catch (e) {
+    //     mealDetailModalElement.renderError(e);
+    //   }
+    // };
+    // console.log(mealItemElement);
+    // mealItemElement.clickEvent = onButtonMealDetailClicked();
 
-    mealItemElement.forEach((item) => {
-      console.log(item);
-      item.clickEvent = onButtonMealDetailClicked(item._meal.idMeal);
-    });
+    // mealItemElement.forEach((item) => {
+    //   console.log(item);
+    //   item.clickEvent = onButtonMealDetailClicked();
+    // });
 
     const sidenav = document.querySelectorAll('.sidenav');
     const options = {

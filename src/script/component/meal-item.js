@@ -9,7 +9,7 @@ class MealItem extends HTMLElement {
 
   set clickEvent(event) {
     this._clickEvent = event;
-    // this.render();
+    this.render();
   }
 
   get idMeal() {
@@ -67,9 +67,23 @@ class MealItem extends HTMLElement {
     //   this.onButtonMealDetailClicked(this._meal.idMeal)
     // );
 
+    const mealDetailModalElement = document.querySelector('meal-detail-modal');
+
+    const onButtonMealDetailClicked = async () => {
+      try {
+        mealDetailModalElement.renderLoading();
+        console.log(this.idMeal);
+        const result = await MealData.getMealDetails(this.idMeal);
+        mealDetailModalElement.detail = result;
+      } catch (e) {
+        mealDetailModalElement.renderError(e);
+      }
+    };
+
+    console.log(this.querySelector('#showDetail'));
     this.querySelector('#showDetail').addEventListener(
       'click',
-      this._clickEvent
+      onButtonMealDetailClicked
     );
     const materialboxed = this.querySelectorAll('.materialboxed');
     M.Materialbox.init(materialboxed);
