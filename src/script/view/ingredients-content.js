@@ -6,7 +6,8 @@ class IngredientsContent extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="section container">
-      Ingredients Content
+      <h5>Ingredient List</h5>
+      <div class="divider"></div>
     </div>
     `;
   }

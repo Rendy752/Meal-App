@@ -1,3 +1,5 @@
+import './ingredient-slider-item';
+
 class MealDetailModal extends HTMLElement {
   connectedCallback() {
     this.setAttribute('id', 'meal-detail');
@@ -62,13 +64,11 @@ class MealDetailModal extends HTMLElement {
       const ingredient = this._detail['strIngredient' + (number + 1)];
       const measure = this._detail['strMeasure' + (number + 1)];
       if (ingredient) {
-        this.querySelector('.slides').innerHTML += `
-        <li class="flow-text">
-          <img class="responsive-img" src="https://www.themealdb.com/images/ingredients/${ingredient}.png">
-          <div class="caption left-align">
-            <h5 class="card-panel orange lighten-5 transparent hoverable black-text waves-effect waves-block waves-light">${measure} ${ingredient}</h5>
-          </div>
-        </li>`;
+        const ingredientSliderItemElement = document.createElement('li', {
+          is: 'ingredient-slider-item'
+        });
+        ingredientSliderItemElement.ingredient = { ingredient, measure };
+        this.querySelector('.slides').appendChild(ingredientSliderItemElement);
       }
     });
     const slider = document.querySelectorAll('.slider');

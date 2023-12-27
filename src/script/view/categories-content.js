@@ -1,3 +1,5 @@
+import '../component/categories-list';
+
 class CategoriesContent extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -6,7 +8,9 @@ class CategoriesContent extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="section container">
-      Categories Content
+      <h5>Category List</h5>
+      <div class="divider"></div>
+      <categories-list></categories-list>
     </div>
     `;
   }

@@ -10,9 +10,11 @@ class MealsContent extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="section container">
-    <search-bar></search-bar>
-    <meal-list></meal-list>
-    <meal-detail-modal></meal-detail-modal>
+      <h5>Meal List</h5>
+      <div class="divider"></div>
+      <search-bar></search-bar>
+      <meal-list></meal-list>
+      <meal-detail-modal></meal-detail-modal>
     </div>
     `;
   }
