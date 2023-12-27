@@ -1,5 +1,5 @@
 import './meal-item';
-import './circular-loading';
+import './linear-loading';
 
 class MealList extends HTMLElement {
   set meals(meals) {
@@ -21,7 +21,7 @@ class MealList extends HTMLElement {
   renderLoading() {
     this.innerHTML = `
     <div class="center-align">
-      <circular-loading></circular-loading>
+      <linear-loading></linear-loading>
     </div>
     `;
   }

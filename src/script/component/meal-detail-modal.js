@@ -12,15 +12,17 @@ class MealDetailModal extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="modal-content orange lighten-5">
-      <div class="row flow-text">
-        <span>${this._detail.strMeal}</span>
-        <span class="new hoverable badge green" data-badge-caption="Category">${
+      <div>
+        <span class="new hoverable badge green center-align" data-badge-caption="Category">${
           this._detail.strCategory
         }</span>
-        <span class="new hoverable badge blue" data-badge-caption="Area">${
+        <span class="new hoverable badge blue center-align" data-badge-caption="Area">${
           this._detail.strArea
         }</span>
       </div>
+      <h3 class="row flow-text">
+        <span>${this._detail.strMeal}</span>
+      </h3>
       <div class="divider"></div>
       <div class="card-image waves-effect waves-block waves-light center-align">
         <img class="circle responsive-img" src="${this._detail.strMealThumb}">
@@ -61,10 +63,10 @@ class MealDetailModal extends HTMLElement {
       const measure = this._detail['strMeasure' + (number + 1)];
       if (ingredient) {
         this.querySelector('.slides').innerHTML += `
-        <li>
+        <li class="flow-text">
           <img class="responsive-img" src="https://www.themealdb.com/images/ingredients/${ingredient}.png">
           <div class="caption left-align">
-            <h2 class="card-panel orange lighten-5 transparent hoverable black-text waves-effect waves-block waves-light">${measure} ${ingredient}</h2>
+            <h5 class="card-panel orange lighten-5 transparent hoverable black-text waves-effect waves-block waves-light">${measure} ${ingredient}</h5>
           </div>
         </li>`;
       }
@@ -76,7 +78,7 @@ class MealDetailModal extends HTMLElement {
   renderLoading() {
     this.innerHTML = `
     <div class="center-align">
-      <circular-loading></circular-loading>
+      <linear-loading></linear-loading>
     </div>
     `;
   }

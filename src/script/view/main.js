@@ -1,4 +1,5 @@
 import '../component/nav-bar';
+import '../component/footer-container';
 import './meals-content';
 import './categories-content';
 import './ingredients-content';

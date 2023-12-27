@@ -15,10 +15,10 @@ class searchBar extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <div class="input-field col s10 m8 offset-m1">
+        <div class="input-field col s9 m8 offset-m1">
           <i class="material-icons prefix">mode_edit</i>
           <textarea id="meals-keyword" class="materialize-textarea"></textarea>
-          <label for="meals-keyword">Search Meals</label>
+          <label class="flow-text" for="meals-keyword">Search Meals</label>
         </div>
         <a id="searchButton" class="btn-floating btn-large waves-effect waves-light blue hoverable col"><i class="material-icons">search</i></a>
       `;

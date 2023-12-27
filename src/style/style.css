@@ -12,3 +12,44 @@ body {
   margin: 0;
   position: relative;
 }
+
+.str-meal {
+  max-height: 10rem;
+}
+
+.card-reveal::-webkit-scrollbar, .modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+.divider {
+  margin: 1rem 0;
+  padding: 1px;
+}
+
+.activator {
+  padding: 4px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.modal-close:hover {
+  background-color: #ffa726;
+}
+
+ .slider .slides {
+    background-color: transparent;
+}
+
+.slider .slides li img {
+    background-size:100% auto;
+    background-repeat: no-repeat;
+}
+
+footer {
+  padding: 2rem 0;
+}
