@@ -4,9 +4,9 @@ class CategoryItem extends HTMLLIElement {
   set category(category) {
     const setCategory = async () => {
       this._category = category;
-      const showListMeal = async (category) => {
+      const showListMeal = async (name) => {
         try {
-          const listMeal = await CategoriesData.searchMealByCategory(category);
+          const listMeal = await CategoriesData.searchMealByCategory(name);
           return listMeal;
         } catch (e) {
           return null;
@@ -21,7 +21,7 @@ class CategoryItem extends HTMLLIElement {
   render() {
     this.innerHTML = `
         <div class="collapsible-header orange darken-4">
-        <div class="row hoverable category-item-header">
+        <div class="row hoverable orange darken-3 category-item-header waves-effect waves-light">
             <div class="col l4 s12 center-align">
             <img src=${
               this._category.strCategoryThumb
@@ -31,7 +31,7 @@ class CategoryItem extends HTMLLIElement {
                 <h5>${this._category.strCategory}</h5>
                 <p>${this._category.strCategoryDescription.replace(
                   '\n',
-                  '<br>'
+                  '<br>',
                 )}</p>
             </div>
         </div>
@@ -47,7 +47,7 @@ class CategoryItem extends HTMLLIElement {
             data-tooltip="${meal.strMeal}">
         `;
     });
-    var tooltip = document.querySelectorAll('.tooltipped');
+    const tooltip = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(tooltip);
   }
 }

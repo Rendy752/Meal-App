@@ -1,25 +1,25 @@
-import './category-item';
+import './ingredient-item';
 import './linear-loading';
 
-class CategoriesList extends HTMLElement {
-  set categories(categories) {
-    this._categories = categories;
+class IngredientsList extends HTMLElement {
+  set ingredients(ingredients) {
+    this._ingredients = ingredients;
     this.render();
   }
 
   render() {
     this.innerHTML = `
-    <div id="category-list-container" class="row">
+    <div id="ingredient-list-container" class="row">
         <ul class="collapsible"></ul>    
     </div>
     `;
-    this._categories.forEach((category) => {
-      const categoryItemElement = document.createElement('li', {
-        is: 'category-item',
+    this._ingredients.forEach((ingredient) => {
+      const ingredientItemElement = document.createElement('li', {
+        is: 'ingredient-item',
       });
 
-      categoryItemElement.category = category;
-      this.querySelector('.collapsible').appendChild(categoryItemElement);
+      ingredientItemElement.ingredient = ingredient;
+      this.querySelector('.collapsible').appendChild(ingredientItemElement);
     });
   }
 
@@ -42,4 +42,4 @@ class CategoriesList extends HTMLElement {
   }
 }
 
-customElements.define('categories-list', CategoriesList);
+customElements.define('ingredients-list', IngredientsList);

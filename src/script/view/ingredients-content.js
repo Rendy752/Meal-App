@@ -1,3 +1,5 @@
+import '../component/ingredients-list';
+
 class IngredientsContent extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -8,6 +10,7 @@ class IngredientsContent extends HTMLElement {
     <div class="section container">
       <h5>Ingredient List</h5>
       <div class="divider"></div>
+      <ingredients-list></ingredients-list>
     </div>
     `;
   }

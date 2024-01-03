@@ -31,11 +31,12 @@ class MealItem extends HTMLElement {
     </div>
     <span class="new badge green col" data-badge-caption="">${this._meal.strCategory}</span>
     <div class="card-content orange darken-4">
-      <div class="valign-wrapper row activator hoverable">
-        <span class="str-meal card-title grey-text text-darken-4">${this._meal.strMeal}</span>
-        <i class="material-icons hide-on-med-and-down right">more_vert</i>
+      <div class="valign-wrapper row activator hoverable tooltipped">
+        <span class="activator str-meal card-title grey-text text-darken-4">${this._meal.strMeal}</span>
+        <i class="material-icons orange-text darken-2">more_vert</i>
       </div>
-      <a id="showDetail" class="waves-effect waves-light btn orange darken-2 hoverable modal-trigger" href="#meal-detail"><i class="hide-on-small-and-down material-icons right">navigate_next</i>Detail</a>
+      <a id="showDetail" class="waves-effect waves-light btn orange darken-2 hoverable modal-trigger" 
+      href="#meal-detail"><i class="hide-on-small-and-down material-icons right">navigate_next</i>Detail</a>
     </div>
     <div class="card-reveal orange darken-2">
       <i class="card-title material-icons right">close</i>

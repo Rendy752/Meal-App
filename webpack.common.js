@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -6,11 +7,10 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(process.cwd(), 'dist'),
   },
   module: {
     rules: [
-      /* style and css loader */
       {
         test: /\.css$/,
         use: [
@@ -31,9 +31,8 @@ module.exports = {
       },
     ],
   },
-  /* plugin */
   plugins: [
-    /* HTML Webpack Plugin */
+    new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',

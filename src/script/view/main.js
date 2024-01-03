@@ -5,6 +5,7 @@ import './categories-content';
 import './ingredients-content';
 import MealData from '../data/meal-data';
 import CategoriesData from '../data/categories-data';
+import IngredientsData from '../data/ingredients-data';
 
 const main = async (content = 'meals-content') => {
   if (content === 'meals-content') {
@@ -49,13 +50,32 @@ const main = async (content = 'meals-content') => {
     await showCategories();
     const collapsible = document.querySelectorAll('.collapsible');
     M.Collapsible.init(collapsible);
+  } else if (content === 'ingredients-content') {
+    const ingredientsListElement = document.querySelector('ingredients-list');
+    const showIngredients = async () => {
+      try {
+        ingredientsListElement.renderLoading();
+        const ingredients = await IngredientsData.showIngredients();
+        ingredientsListElement.ingredients = ingredients;
+      } catch (e) {
+        ingredientsListElement.renderError(e);
+      }
+    };
+    await showIngredients();
+    const collapsible = document.querySelectorAll('.collapsible');
+    M.Collapsible.init(collapsible);
   }
 
   const sidenav = document.querySelectorAll('.sidenav');
   const options = {
-    edge: 'left'
+    edge: 'left',
   };
   M.Sidenav.init(sidenav, options);
+
+  const FloatingActionButton = document.querySelectorAll('.fixed-action-btn');
+  M.FloatingActionButton.init(FloatingActionButton, {
+    direction: 'top',
+  });
 };
 
 export default main;
