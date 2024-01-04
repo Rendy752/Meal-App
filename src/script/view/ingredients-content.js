@@ -8,7 +8,7 @@ class IngredientsContent extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="section container">
-      <h5>Ingredient List</h5>
+      <h3 class="content-title">Ingredient List (Maintenance)</h3>
       <div class="divider"></div>
       <ingredients-list></ingredients-list>
     </div>

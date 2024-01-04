@@ -33,9 +33,6 @@ const main = async (content = 'meals-content') => {
       }
     };
     searchElement.clickEvent = onButtonSearchKeywordClicked;
-
-    const modal = document.querySelectorAll('meal-detail-modal');
-    M.Modal.init(modal, { preventScrolling: false });
   } else if (content === 'categories-content') {
     const categoriesListElement = document.querySelector('categories-list');
     const showCategories = async () => {
@@ -50,6 +47,8 @@ const main = async (content = 'meals-content') => {
     await showCategories();
     const collapsible = document.querySelectorAll('.collapsible');
     M.Collapsible.init(collapsible);
+    const modal = document.querySelectorAll('meal-detail-modal');
+    M.Modal.init(modal, { preventScrolling: false });
   } else if (content === 'ingredients-content') {
     const ingredientsListElement = document.querySelector('ingredients-list');
     const showIngredients = async () => {
@@ -76,6 +75,9 @@ const main = async (content = 'meals-content') => {
   M.FloatingActionButton.init(FloatingActionButton, {
     direction: 'top',
   });
+
+  const modal = document.querySelectorAll('meal-detail-modal');
+  M.Modal.init(modal, { preventScrolling: false });
 };
 
 export default main;

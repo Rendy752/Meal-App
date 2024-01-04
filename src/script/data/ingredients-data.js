@@ -6,7 +6,9 @@ class IngredientsData {
       const responseJson = await response.json();
       return Promise.resolve(responseJson.meals);
     } catch (e) {
-      return Promise.reject('Problem occurred, such as your internet');
+      return Promise.reject(
+        'Problem occurred, such as your internet. Please try again later',
+      );
     }
   };
 
@@ -16,7 +18,9 @@ class IngredientsData {
       const responseJson = await response.json();
       return Promise.resolve(responseJson.meals);
     } catch (e) {
-      return Promise.reject('Problem occurred, such as your internet');
+      return Promise.reject(
+        'Problem occurred, such as your internet. Please try again later',
+      );
     }
   };
 }

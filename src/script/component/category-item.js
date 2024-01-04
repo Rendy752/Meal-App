@@ -1,4 +1,6 @@
 import CategoriesData from '../data/categories-data';
+import MealData from '../data/meal-data';
+import './meal-item-mini';
 
 class CategoryItem extends HTMLLIElement {
   set category(category) {
@@ -18,9 +20,21 @@ class CategoryItem extends HTMLLIElement {
     setCategory();
   }
 
+  onButtonMealDetailClicked = async (id) => {
+    try {
+      const mealDetailModalElement =
+        document.querySelector('meal-detail-modal');
+      mealDetailModalElement.renderLoading();
+      const result = await MealData.getMealDetails(id);
+      mealDetailModalElement.detail = result;
+    } catch (e) {
+      mealDetailModalElement.renderError(e);
+    }
+  };
+
   render() {
     this.innerHTML = `
-        <div class="collapsible-header orange darken-4">
+        <div class="collapsible-header orange darken-4 waves-effect waves-light">
         <div class="row hoverable orange darken-3 category-item-header waves-effect waves-light">
             <div class="col l4 s12 center-align">
             <img src=${
@@ -41,11 +55,21 @@ class CategoryItem extends HTMLLIElement {
         </div>
     `;
     this._listMeal.forEach((meal) => {
-      this.querySelector('#list-meal-container').innerHTML += `
-            <img src="${meal.strMealThumb}" class="tooltipped col l3 m4 s6" 
-            data-position="top"
-            data-tooltip="${meal.strMeal}">
-        `;
+      const mealItemMiniElement = document.createElement('meal-item-mini');
+      mealItemMiniElement.meal = meal;
+      this.querySelector('#list-meal-container').appendChild(
+        mealItemMiniElement,
+      );
+      // this.querySelector('#list-meal-container').innerHTML += `
+      //       <img id="showDetail" src="${meal.strMealThumb}" class="tooltipped col l3 m4 s6 modal-trigger" href="#meal-detail"
+      //       data-position="top"
+      //       data-tooltip="${meal.strMeal}">
+      //   `;
+      // console.log(meal.idMeal);
+      // this.querySelector('#showDetail').addEventListener(
+      //   'click',
+      //   this.onButtonMealDetailClicked(meal.idMeal),
+      // );
     });
     const tooltip = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(tooltip);

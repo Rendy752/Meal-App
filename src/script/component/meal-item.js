@@ -59,7 +59,7 @@ class MealItem extends HTMLElement {
 
     this.querySelector('#showDetail').addEventListener(
       'click',
-      this.onButtonMealDetailClicked
+      this.onButtonMealDetailClicked,
     );
     const materialboxed = this.querySelectorAll('.materialboxed');
     M.Materialbox.init(materialboxed);

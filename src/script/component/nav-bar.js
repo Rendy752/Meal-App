@@ -27,12 +27,12 @@ class NavBar extends HTMLElement {
 
   <div class="fixed-action-btn">
     <a class="btn-floating btn-large red">
-      <i class="large material-icons">mode_edit</i>
+      <i class="large material-icons">menu</i>
     </a>
     <ul>
-      <li id="meals" class="tooltipped" data-position="top" data-tooltip="Meals"><a class="btn-floating red waves-effect waves-light"><i class="material-icons">insert_chart</i></a></li>
-      <li id="categories" class="tooltipped" data-position="top" data-tooltip="Categories"><a class="btn-floating yellow darken-1 waves-effect waves-light"><i class="material-icons">format_quote</i></a></li>
-      <li id="ingredients" class="tooltipped" data-position="top" data-tooltip="Ingredients"><a class="btn-floating blue waves-effect waves-light"><i class="material-icons">attach_file</i></a></li>
+      <li id="meals" class="tooltipped" data-position="top" data-tooltip="Meals"><a class="btn-floating red waves-effect waves-light"><i class="material-icons">local_dining</i></a></li>
+      <li id="categories" class="tooltipped" data-position="top" data-tooltip="Categories"><a class="btn-floating yellow darken-1 waves-effect waves-light"><i class="material-icons">room_service</i></a></li>
+      <li id="ingredients" class="tooltipped" data-position="top" data-tooltip="Ingredients"><a class="btn-floating blue waves-effect waves-light"><i class="material-icons">restaurant</i></a></li>
     </ul>
   </div>
   `;

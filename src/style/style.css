@@ -17,6 +17,16 @@ body {
   cursor: pointer;
 }
 
+.content-title {
+  font-weight: bold;
+  
+  font-family: 'Righteous', serif;
+  text-shadow: 2px 2px 2px #ff7700;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .str-meal {
   max-height: 10rem;
 }

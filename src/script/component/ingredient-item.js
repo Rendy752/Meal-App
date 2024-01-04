@@ -20,7 +20,7 @@ class IngredientItem extends HTMLLIElement {
 
   render() {
     this.innerHTML = `
-        <div class="collapsible-header orange darken-4">
+        <div class="collapsible-header orange darken-4 waves-effect waves-light">
         <div class="row hoverable orange darken-3 ingredient-item-header waves-effect waves-light">
             <div class="col l4 s12 center-align">
             <img src="https://www.themealdb.com/images/ingredients/${this._ingredient.strIngredient}.png" class="responsive-img circle white">

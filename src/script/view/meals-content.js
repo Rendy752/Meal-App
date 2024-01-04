@@ -10,7 +10,7 @@ class MealsContent extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="section container">
-      <h5>Meal List</h5>
+      <h3 class="content-title">Meal List</h3>
       <div class="divider"></div>
       <search-bar></search-bar>
       <meal-list></meal-list>
