@@ -17,8 +17,8 @@ The project is designed to be lightweight, performant, and developer-friendly, w
 - **Loading & Error Handling**: Displays loading animations and user-friendly error messages during API calls.
 
 ## Screenshot
-![MealApp Screenshot](src/images/screenshot.png)
-*Caption: The MealApp homepage showcasing a random meal with search and navigation options.*
+![collage_3_4](https://github.com/user-attachments/assets/d544c2c6-0707-41c4-90aa-bd7140262c70)
+*Caption: The MealApp overall screen*
 
 ## Tech Stack
 - **Frontend**: Vanilla JavaScript, Web Components
